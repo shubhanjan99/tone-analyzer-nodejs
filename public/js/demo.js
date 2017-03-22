@@ -68,7 +68,8 @@ function allReady(thresholds, sampleText) {
     $errorMessage = $('.error--message'),
     $inputRadio = $('.input--radio'),
     $textarea = $('.input--textarea'),
-    $submitButton = $('.input--submit-button'),
+    $submitButton = $('.en-submit-button'),
+    $submitFrButton = $('.fr-submit-button'),
     $emotionGraph = $('.summary-emotion-graph'),
     $writingGraph = $('.summary-writing-graph'),
     $socialGraph = $('.summary-social-graph'),
@@ -430,7 +431,12 @@ function allReady(thresholds, sampleText) {
    * @return {undefined}
    */
   function getToneAnalysis(text) {
-    $.post('/api/tone', {'text': text }, toneCallback)
+    $.post('/api/tone', {'text': text, 'language': 'en'}, toneCallback)
+      .fail(_error);
+  }
+
+  function getFrToneAnalysis(text) {
+    $.post('/api/tone', {'text': text, 'language': 'fr'}, toneCallback)
       .fail(_error);
   }
 
@@ -466,6 +472,18 @@ function allReady(thresholds, sampleText) {
     $error.hide();
     scrollTo($loading);
     getToneAnalysis($textarea.val());
+  });
+
+  /**
+   * Submit button click event for French
+   */
+  $submitFrButton.click(function() {
+    $input.show();
+    $loading.show();
+    $output.hide();
+    $error.hide();
+    scrollTo($loading);
+    getFrToneAnalysis($textarea.val());
   });
 
   /**

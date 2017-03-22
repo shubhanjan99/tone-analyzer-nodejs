@@ -5,8 +5,8 @@ declared-services:
     plan: standard
 applications:
 - services:
-  - my-tone-analyzer-service
-  name: tone-analyzer-demo
+  - Tone Analyzer-dev-6u
+  name: tone-analyzer-dev-ym.stage1
   command: npm start
   path: .
   instances: 2

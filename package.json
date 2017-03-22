@@ -43,7 +43,7 @@
     "express-rate-limit": "^2.6.0",
     "express-secure-only": "^0.2.1",
     "helmet": "^3.4.0",
-    "watson-developer-cloud": "^2.15.2"
+    "watson-developer-cloud": "shubhanjan99/node-sdk"
   },
   "devDependencies": {
     "codecov": "^1.0.1",

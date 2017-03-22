@@ -29,8 +29,8 @@ require('./config/express')(app);
 var toneAnalyzer = new ToneAnalyzerV3({
   // If unspecified here, the TONE_ANALYZER_USERNAME and TONE_ANALYZER_PASSWORD environment properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-  // username: '<username>',
-  // password: '<password>',
+  username: '05b52b44-0820-48a4-80c6-62b4daa01638',
+  password: 'BvvYunebrhd4',
   version_date: '2016-05-19'
 });
 
